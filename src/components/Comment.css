@@ -1,0 +1,17 @@
+.box{
+    margin-top: 120px;
+    background-color: coral;
+    width:300px;
+    height:400px;
+    position:relative;
+    left:300px;
+}
+.description{
+    width:80px;
+    height:120px;
+    position:fixed;
+}
+.input-group{
+    width:300px;
+    height:200px;
+}

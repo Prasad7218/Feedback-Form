@@ -1,24 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+import Comment from './components/Comment';
+import {useState} from 'react';
 
 function App() {
+  const [render,setRender]=useState(false);
+
+  const giveHandler=()=>{
+    setRender((value)=> !value)
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <button onClick={giveHandler}>Give feedback</button>
+   { render &&<div>
+     <Comment/>
+     </div>
+  }
+  </div>
   );
 }
 
