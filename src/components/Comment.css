@@ -1,11 +1,12 @@
-.box{
+/* .box{
     margin-top: 120px;
     background-color: coral;
     width:300px;
     height:400px;
     position:relative;
     left:300px;
-}
+    bottom:500px;
+} */
 .description{
     width:80px;
     height:120px;
@@ -14,4 +15,12 @@
 .input-group{
     width:300px;
     height:200px;
+}
+ .feedback{
+    position:relative;
+    bottom:900px;
+    left:200px;
+    background-color: coral;
+    width:300px;
+    height:400px;
 }

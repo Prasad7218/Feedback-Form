@@ -1,6 +1,7 @@
 import './App.css';
 import Comment from './components/Comment';
 import {useState} from 'react';
+import img1 from './Images/mobile.jpg'
 
 function App() {
   const [render,setRender]=useState(false);
@@ -10,7 +11,8 @@ function App() {
   }
   return (
     <div className="App">
-    <button onClick={giveHandler}>Give feedback</button>
+      <img src={img1} alt="mobo"/>
+    <button className="btn3" onClick={giveHandler}><b>Give feedback</b></button>
    { render &&<div>
      <Comment/>
      </div>

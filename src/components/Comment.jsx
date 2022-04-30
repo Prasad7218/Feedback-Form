@@ -16,8 +16,9 @@ const Comment=()=>{
      setState({...state,[event.target.name]:event.target.value})
     }
     return(
-        <div className='box'>
-            <form className="feedback">
+        <div>
+            <div className="feedback">
+            <form>
             <label>Rating</label><br/>
             <select name="rating" onChange={changeHandler}>
                 <option>1</option>
@@ -40,6 +41,7 @@ const Comment=()=>{
              </div>
             <button onClick={btnHandler} type="button" className="btn btn-primary">Submit</button>
             </form>
+            </div>
         </div>
 
     )
