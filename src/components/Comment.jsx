@@ -4,8 +4,11 @@ const Comment=()=>{
     const[state,setState]=useState({
         rating: "",
         name: "",
+        lname:"",
         description: ""
     })
+    const[span,setSpan]=useState('');
+    const[person,setPerson]=useState('');
 
     const btnHandler=()=>{
         alert("Submitted");
@@ -14,6 +17,19 @@ const Comment=()=>{
 
     const changeHandler=(event)=>{
      setState({...state,[event.target.name]:event.target.value})
+     
+    }
+
+    const handleChange=(event)=>{
+        const item=event.target.value;
+        setPerson(item);
+        if(item.length<2 || item.length>15 ){
+            setSpan('must be greater than 2')
+        }
+        else{
+            setSpan('');
+        }
+
     }
     return(
         <div>
@@ -27,8 +43,12 @@ const Comment=()=>{
                 <option>4</option>
                 <option>5</option>
             </select><br/><br/>
-            <label>Your Name</label><br/>
-            <input type="text" name="name" onChange={changeHandler}/><br/><br/>
+            <label>First Name</label><br/>
+            <input type="text" minLength="2" name="name" onChange={changeHandler}/><br/>
+            <label>Last Name</label><br/>
+            <input type="text" value={person} onChange={handleChange}/><br/>
+            <span className="error">{span}</span>
+            <br/><br/>
             {/* <label>Comment</label><br/> */}
             {/* <input
             name="description"
